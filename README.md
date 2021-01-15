@@ -22,11 +22,11 @@ will put LUFA in the right directory.
 6. Run: ```brew tap osx-cross/avr```
 7. Run: ```brew install avr-gcc```
 8. Plug your Arduino into your computer, take a piece of wire or metal, and connect these two pins briefly using the wire. Don't worry you won't get thunder jolted. Your Arduino is now in DFU mode! ![image](https://www.arduino.cc/en/uploads/Hacking/Uno-front-DFU-reset.png)
-9. Next run my script: ```bash installToArd``` to compile the code, erase the standard Arduino software, flash the Arduino with our Joystick.hex file, and save it.
+9. Next while your Arduino is still plugged into your computer, run my script: ```bash installToArd``` to compile the code, erase the standard Arduino software, flash the Arduino with our Joystick.hex file, and save it.
 10. Your Arduino is ready to roll!
 
-#### Setup Instructions For Teensy
-The process is a bit simpler for Teensy boys.
+#### Setup Instructions For Arduino Teensy
+The process is a bit different for Teensy boys. I'm not entirely sure of the exact steps so you can try following this / look at previous projects for some more detailed information.
 
 Go to the Teensy website and download/install the [Teensy Loader application](https://www.pjrc.com/teensy/loader.html). For Linux, follow their instructions for installing the [GCC Compiler and Tools](https://www.pjrc.com/teensy/gcc.html). For Windows, you will need the latest [AVR toolchain](http://www.atmel.com/tools/atmelavrtoolchainforwindows.aspx) from the Atmel site. See [this issue](https://github.com/LightningStalker/Splatmeme-Printer/issues/10) and [this thread](http://gbatemp.net/threads/how-to-use-shinyquagsires-splatoon-2-post-printer.479497/) on GBAtemp for more information. For Mac you can run the same brew instructions from the Arduino Uno R3 setup.
 
@@ -35,7 +35,7 @@ You'll need to edit the ```makefile``` setting ```MCU = atmega32u4``` for Teensy
 ### Run Instructions Once Your Arduino Has Been Setup And Flashed
 Now that your Arduino is flashed with the program you can do the following steps to automate your replay saving whenever you need!
 
-Take your Switch in handheld mode. Open the SSBU Game > Vault > Replays > Leave your cursor over the "Replay Data" Button. Plug your Arduino into the Switch using any sort of USB C to USB A Adapter and let it run! You'll note that it will start the recording of a replay, wait about 7 minutes (since that's the standard game time's max length), delete the replay, and continue on looping the inputs forever.
+Take your Switch in handheld mode. Open the SSBU Game > Vault > Replays > Leave your cursor over the "Replay Data" Button. Plug your Arduino into the Switch using any sort of USB C to USB A Adapter and let it run! You'll note that it will start the recording of a replay, wait about 7 minutes (since that's the standard game time's max length), delete the replay, and continue on looping the inputs forever!
 
 #### Thanks
 Thanks to https://github.com/kidGodzilla/woff-grinder for his Final Fantasy XP grinder which I modified.
