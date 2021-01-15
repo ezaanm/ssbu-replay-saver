@@ -45,3 +45,5 @@ Thanks to https://github.com/kidGodzilla/woff-grinder for his Final Fantasy XP g
 Thanks to https://github.com/bertrandom/snowball-thrower for the updated information which modifies the original script to throw snowballs in Zelda. This C Source is much easier to start from, and has a nice object interface for creating new command sequences.
 
 Thanks to Shiny Quagsire for his [Splatoon post printer](https://github.com/shinyquagsire23/Switch-Fightstick) and progmem for his [original discovery](https://github.com/progmem/Switch-Fightstick).
+
+zoo wee mama
