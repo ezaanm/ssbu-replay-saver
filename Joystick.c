@@ -39,7 +39,8 @@ typedef enum {
 	NOTHING,
 	PLUS,
 	MINUS,
-	TRIGGERS
+	TRIGGERS,
+	XD
 } Buttons_t;
 
 typedef struct {
@@ -48,205 +49,62 @@ typedef struct {
 } command; 
 
 static const command step[] = {
-	// Setup controller
+	// Setup controller (This is required for looping to work)
 	{ NOTHING,  250 },
 	{ TRIGGERS,   5 },
 	{ NOTHING,  100 },
 	{ TRIGGERS,   5 },
 	{ NOTHING,  100 },
-	{ A,          5 },
-	{ NOTHING,   50 },
+	{ A,          5 }, //First plug in this A may actually input
+	{ NOTHING,  600 },
 
-	// Save
+	//Select Replay
 	{ A,          5 },
 	{ NOTHING,  100 },
-	{ A,          5 },
-	{ NOTHING,  120 },
-	{ A,          5 },
-
-	// Walk to the girl
-
-	// Walk left
-	{ LEFT,     135 },
-	{ NOTHING,   25 },
-
-	// Walk down
-	{ DOWN,      44 },
-	{ NOTHING,   25 },
-
-	// Talk to her
-	{ A,          5 },
-	{ NOTHING,  200 },
-	{ A,          5 },
-	{ NOTHING,  200 },
-
-	// Up 4 times when arrive at menu
-	{ UP,         5 },
-	{ NOTHING,   10 },
-	{ UP,         5 },
-	{ NOTHING,   10 },
-	{ UP,         5 },
-	{ NOTHING,   10 },
-	{ UP,         5 },
-	{ NOTHING,   10 },
-
-	// After the extra quest is unlocked, it's 5
-	{ UP,         5 },
-	{ NOTHING,   10 },
-
-	// After the extra quest is unlocked, it's 6
-	{ UP,         5 },
-	{ NOTHING,   10 },
-
-	// In the Post-game, it's 8
-	{ UP,         5 },
-	{ NOTHING,   10 },
-	{ UP,         5 },
-	{ NOTHING,   10 },
-
-	// Press A to take item
-	{ A,          5 },
-	{ NOTHING,   20 },
-	{ A,          5 },
-	{ NOTHING,   20 },
-
-	// Enter Quest
-	{ A,          5 },
-	{ NOTHING,   20 },
-	{ A,          5 },
-	{ NOTHING,   20 },
-
-	// Wait a while
-	{ NOTHING,  200 },
-	{ NOTHING,  200 },
-
-	// Skip scene
-
-	// Press Plus
-	{ PLUS,       5 },
-	{ NOTHING,   30 },
-	// Press X
-	{ X,          5 },
-	{ NOTHING,   30 },
-	// Press up
-	{ UP,        5 },
-	{ NOTHING,  30 },
-	// Press A
-	{ A,          5 },
-	{ NOTHING,   30 },
-
-	// Wait a while
-	{ NOTHING,  200 },
-	{ NOTHING,  130 },
-
-	// Fast forward a little
-	{ R,         50 },
-	{ NOTHING,   15 },
-
-	// Set up thunder & fire spells
-
-	// First spell
-
-	// L
-	{ L,          5 },
-	{ NOTHING,   15 },
-	// Down
 	{ DOWN,       5 },
-	{ NOTHING,   15 },
-	// A
-	{ A,          5 },
-	{ NOTHING,   15 },
-	// A
-	{ A,          5 },
-	{ NOTHING,   15 },
-	// A
-	{ A,          5 },
-	{ NOTHING,   20 },
-
-	// Wait
-	{ NOTHING,   10 },
-
-	// Second spell
-
-	// L
-	{ L,          5 },
-	{ NOTHING,   15 },
-	// Down
+	{ NOTHING,  100 },
 	{ DOWN,       5 },
-	{ NOTHING,   15 },
-	// A
+	{ NOTHING,  100 },
 	{ A,          5 },
-	{ NOTHING,   15 },
-	// A
-	{ A,          5 },
-	{ NOTHING,   15 },
-	// A
-	{ A,          5 },
-	{ NOTHING,   10 },
-
-	// Auto battle
-
-	// Press minus
-	{ MINUS,      5 },
-	{ NOTHING,   10 },
-
-	// Hold R for a while
-	{ R,        500 },
-	{ R,        500 },
-	{ R,        380 },
-
-	// If level 50-70, you might need more time in battle
-	// { R,        500 },
-	// { R,        500 },
-	// { R,        500 },
-
-	// Proceed past battle
-
-	// Press A
-	{ A,          5 },
-	{ NOTHING,   30 },
-	{ A,          5 },
-	{ NOTHING,   30 },
-	{ A,          5 },
-	{ NOTHING,   30 },
-	{ A,          5 },
-	{ NOTHING,   30 },
-
-	// Wait a while
-	{ NOTHING,  200 },
-	{ NOTHING,  200 },
 	{ NOTHING,  100 },
 
-	// Skip scene
-
-	// Press Plus
+	//Video Conversion Settings
 	{ PLUS,       5 },
-	{ NOTHING,   15 },
-	// Press X
-	{ X,          5 },
-	{ NOTHING,   15 },
-	// Press up
-	{ UP,         5 },
-	{ NOTHING,   15 },
-	// Press A
+	{ NOTHING,  100 },
+	{ PLUS,       5 },
+	{ NOTHING,  100 },
+
+	//Wait for match to start (about 10s)
+	{ NOTHING,  700 },
+
+	//Turn off peripheral buttons
+	{ XD,        25 },
+	{ NOTHING,  100 },
+
+	//Convert Video
+	{ PLUS,       5 },
+	{ NOTHING,  100 },
+
+	//Wait just a bit past 7 Minutes
+	{ NOTHING,  18500 },
+
+	//Delete
+	{ DOWN,       5 },
+	{ NOTHING,  100 },
+	{ DOWN,       5 },
+	{ NOTHING,  100 },
+	{ DOWN,       5 },
+	{ NOTHING,  100 },
+	{ RIGHT,      5 },
+	{ NOTHING,  100 },
 	{ A,          5 },
-	{ NOTHING,   20 },
+	{ NOTHING,  100 },
+	{ RIGHT,      5 },
+	{ NOTHING,  100 },
+	{ A,          5 },
+	{ NOTHING,  100 },
 
-	// Wait a while
-	{ NOTHING,  200 },
-	{ NOTHING,  200 },
-	{ NOTHING,  90 },
-
-	// Go back to save point
-	// up
-	{ UP,        26 },
-	{ NOTHING,   50 },
-	// left
-	{ LEFT,       3 },
-	{ NOTHING,   50 },
-
-	// Wait before looping
-	// { NOTHING,   50 },
+	//loop mfer loop
 };
 
 // Main entry point.
@@ -486,6 +344,11 @@ void GetNextReport(USB_JoystickReport_Input_t* const ReportData) {
 
 				case TRIGGERS:
 					ReportData->Button |= SWITCH_L | SWITCH_R;
+					break;
+
+				case XD:
+					ReportData->HAT = HAT_BOTTOM;
+					ReportData->Button |= SWITCH_X;
 					break;
 
 				default:
