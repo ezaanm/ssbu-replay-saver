@@ -14,7 +14,7 @@ git clone --recursive git@github.com:ezaanm/ssbu-replay-saver.git
 will put LUFA in the right directory.
 
 ### Setup Instructions For Arduino Uno R3
-1. Cop an Arduino Uno R3 (You can use a Teensy as well but the Uno R3 is the cheapest one on Amazon. I actually got a knockoff for $10: https://amzn.com/B01EWOE0UU)
+1. Cop an Arduino Uno R3 (You can use a Teensy as well but the Uno R3 is the cheapest one on Amazon. I actually got a [knockoff for $10](https://amzn.com/B01EWOE0UU))
 2. Clone this repo like shown ^^^
 3. We're gonna need to put that [Arduino Uno R3 in DFU mode](https://www.arduino.cc/en/Hacking/DFUProgramming8U2) and flash it with our own .hex code. If you're using a PC download the applications in the [link](https://www.arduino.cc/en/Hacking/DFUProgramming8U2), if you're using a Mac you can run the following ```brew``` commands below.
 4. In Terminal ```cd``` into the ```ssbu-replay-saver``` repo you just cloned. 
