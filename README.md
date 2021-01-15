@@ -11,7 +11,7 @@ LUFA has been included as a git submodule, so clone the repo like this:
 git clone --recursive git@github.com:ezaanm/ssbu-replay-saver.git
 ```
 
-will put LUFA in the right directory.
+and it will put LUFA in the right directory.
 
 ### Setup Instructions For Arduino Uno R3
 1. Cop an Arduino Uno R3 (You can use a Teensy as well but the Uno R3 is the cheapest one on Amazon. I actually got a [knockoff for $10](https://amzn.com/B01EWOE0UU))
